@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/FoodDetails.css";
+import "../style/foodDetails.css";
 
 const FoodDetails = ({ selectedItem, navigateTo }) => {
   return (
