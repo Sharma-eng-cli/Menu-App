@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchRecipes } from "../fetchData";
-import "../style/Menu.css";
+import "../style/menu.css";
 
 const Menu = ({ navigateTo, setSelectedItem, addToOrder, removeFromOrder, orderItems }) => {
   const [recipes, setRecipes] = useState([]);
