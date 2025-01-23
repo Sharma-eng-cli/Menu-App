@@ -1,0 +1,289 @@
+/* Main container styling */
+.maincontainer {
+  text-align: center;
+  color: #524e4e; /* Darker color for a balanced look */
+  font-size: 22px;
+  background: #ffffff; /* Soft light background */
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* Main container styling */
+.maincontainer {
+  text-align: center;
+  color: #4a3c30; /* Soft dark brown color for text */
+  font-size: 22px;
+  background: #f4f0e1; /* A soft beige background instead of pure white */
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Headings styling */
+.maincontainer h1, .maincontainer h2 {
+  color: #3e2a1f; /* Darker brown for headings */
+  font-family: 'Georgia', serif; /* Elegant serif font for headings */
+}
+
+/* Paragraphs and general text */
+.maincontainer p {
+  color: #6b6b6b; /* A subtle gray for paragraphs to avoid harsh contrast */
+  font-size: 1.2rem; /* Slightly larger text for better readability */
+}
+
+/* Home Page Styling with Overlay */
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Subtle dark overlay for readability */
+  background-image: url("https://t4.ftcdn.net/jpg/06/58/43/65/360_F_658436525_GN0zI0PnAkDdSmAdmjG6CzJZlb2Ti0fK.jpg"); /* Background image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* To ensure text stands out on background images */
+.homePage h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff; /* Light color for headings to contrast with darker overlay */
+}
+
+.homePage p {
+  font-size: 1.5rem;
+  color: #fff; /* Light color for text to stand out on darkened background */
+}
+
+
+/* Navigation bar styling */
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+  margin: 0 15px;
+  color: #7c5c3b; /* Soft golden brown color */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #e39a5b; /* Lighter golden brown on hover */
+}
+
+/* Headings styling */
+h1 {
+  color: #e9b56e; /* Warm dark brown for primary headings */
+  font-size: 3rem;
+  margin: 20px 0;
+  font-family: "Georgia", serif;
+}
+
+h2 {
+  color: #7c5c3b; /* Soft golden brown color */
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+h3, h4, p {
+  color: #6a4e23; /* Rich golden-brown for body text */
+  font-size: 1rem;
+}
+
+/* Button styling */
+button {
+  background-color: #e39a5b; /* Lighter golden brown */
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c8864f; /* Darker golden brown on hover */
+}
+
+/* App container */
+.appContainer {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #fff;
+  color: #7c5c3b; /* Soft golden brown */
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  text-decoration: underline;
+  color: #e39a5b; /* Hover effect with lighter golden brown */
+}
+
+/* Centered Home Page */
+.content {
+  flex-grow: 1;
+  padding-top: 60px; /* To offset the navbar */
+  background-image: url("https://t4.ftcdn.net/jpg/06/58/43/65/360_F_658436525_GN0zI0PnAkDdSmAdmjG6CzJZlb2Ti0fK.jpg"); /* Set a background image */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay for text readability */
+}
+
+.homePage h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: "Georgia", serif;
+}
+
+.homePage p {
+  font-size: 1.5rem;
+  color: #f9e8c6; /* Soft light gold color for the paragraph text */
+}
+
+/* Menu & Other Views */
+.menuContainer,
+.billContainer,
+.foodDetailsContainer,
+.contactContainer,
+.aboutContainer {
+  padding: 20px;
+  background-color: #fff; /* Bright background for the content areas */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menuTitle {
+  font-size: 2rem;
+  text-align: center;
+  color: #4b3c27; /* Rich brown color */
+}
+
+.menuItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menuItem {
+  background-color: #fff;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #f9e8c6; /* Soft golden beige for menu items */
+}
+
+.menuImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Bill Page Styles */
+.orderItem {
+  margin: 10px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.billBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #7c5c3b; /* Soft golden brown */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.billBtn:hover {
+  background-color: #e39a5b; /* Lighter golden brown on hover */
+}
+
+/* Styling for counter digits */
+.counter {
+  color: black; /* Set the counter text color to black */
+  font-size: 1.5rem; /* Increase the size of the counter for better visibility */
+  font-weight: bold; /* Make the counter bold for emphasis */
+  padding: 5px 12px; /* Add some space around the counter */
+  background-color: #ffd700; /* Gold background to make it stand out */
+  border-radius: 20px; /* Rounded edges for a more gracious look */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Add a subtle shadow for depth */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease; /* Smooth transition on interaction */
+}
+
+.counter:hover {
+  transform: scale(1.1); /* Slightly enlarge the counter on hover */
+  background-color: #ffcc00; /* Darker gold on hover */
+}
+
+/* Styling for Quick Menu Button */
+.quickMenuBtn {
+  background-color: #ffcc00; /* Bright golden yellow color */
+  color: #fff; /* White text */
+  font-size: 1.5rem; /* Larger text size for prominence */
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  padding: 15px 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quickMenuBtn:hover {
+  background-color: #ffaa00; /* Slightly darker yellow on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
