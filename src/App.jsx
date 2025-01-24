@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Menu from "./Components/Menu";
 import FoodDetails from "./Components/FoodDetails";
 import Bill from "./Components/Bill";
@@ -10,6 +10,24 @@ const App = () => {
   const [currentView, setCurrentView] = useState("home");
   const [selectedItem, setSelectedItem] = useState(null);
   const [orderItems, setOrderItems] = useState([]);
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  // Load theme from localStorage on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setIsLightMode(savedTheme === "light");
+    }
+  }, []);
+
+  // Toggle the theme and save to localStorage
+  const toggleTheme = () => {
+    setIsLightMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("theme", newMode ? "light" : "dark");
+      return newMode;
+    });
+  };
 
   const navigateTo = (view) => {
     setCurrentView(view);
@@ -43,7 +61,7 @@ const App = () => {
   };
 
   return (
-    <div className="appContainer">
+    <div className={`appContainer ${isLightMode ? "light-mode" : ""}`}>
       <nav className="navbar">
         <ul>
           <li onClick={() => navigateTo("home")}>Home</li>
@@ -52,6 +70,18 @@ const App = () => {
           <li onClick={() => navigateTo("contact")}>Contact</li>
           <li onClick={() => navigateTo("about")}>About</li>
         </ul>
+        <div className="themeToggleContainer">
+          <span className="themeToggleLabel">
+            {isLightMode ? "Light" : "Dark"}
+          </span>
+          <div
+            className="themeToggleSlider"
+            onClick={toggleTheme}
+            style={{
+              "--toggle-bg-color": isLightMode ? "#007bff" : "#333",
+            }}
+          ></div>
+        </div>
       </nav>
 
       <div className="content">
@@ -89,4 +119,4 @@ const App = () => {
   );
 };
 
-export default App; // Ensure default export
+export default App;

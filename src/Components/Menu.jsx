@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { fetchRecipes } from "../fetchData";
+import { fetchRecipes, fetchRecipeDetails } from "../fetchData"; // Add fetchRecipeDetails to fetch detailed recipe data
 import "../style/menu.css";
 
 const Menu = ({ navigateTo, setSelectedItem, addToOrder, removeFromOrder, orderItems }) => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedRecipe, setSelectedRecipe] = useState(null); 
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -14,6 +15,23 @@ const Menu = ({ navigateTo, setSelectedItem, addToOrder, removeFromOrder, orderI
     };
     loadRecipes();
   }, []);
+
+  const handleViewDetails = async (recipe) => {
+    try {
+      // Fetch detailed data for the selected recipe
+      const recipeDetails = await fetchRecipeDetails(recipe.id); 
+      const detailedRecipe = {
+        ...recipe,
+        ingredients: recipeDetails.ingredients,
+        instructions: recipeDetails.instructions,
+      };
+      setSelectedItem(detailedRecipe); // Set detailed recipe as the selected item
+      navigateTo("details"); // Navigate to the "details" view
+    } catch (error) {
+      console.error("Error fetching recipe details:", error);
+      alert("Failed to load recipe details. Please try again.");
+    }
+  };
 
   if (loading) return <p>Loading recipes...</p>;
 
@@ -36,13 +54,25 @@ const Menu = ({ navigateTo, setSelectedItem, addToOrder, removeFromOrder, orderI
             </p>
             <button
               className="viewDetailsBtn"
-              onClick={() => {
-                setSelectedItem(recipe);
-                navigateTo("details");
-              }}
+              onClick={() => handleViewDetails(recipe)}
             >
               View Details
             </button>
+
+            <div
+             className={`recipeDetailsContainer ${
+             selectedRecipe?.id === recipe.id ? "visible" : "hidden"
+              }`}>
+             <h2 className="recipeDetailsTitle">Ingredients</h2>
+               <ul className="ingredientsList">
+               {recipe.ingredients?.map((ingredient, index) => (
+               <li key={index}>{ingredient}</li> ))}
+               </ul>
+             <h2 className="recipeDetailsTitle">Instructions</h2>
+              <p className="instructions">{recipe.instructions}</p>
+            </div>
+
+
             <div className="orderControls">
               <button
                 className="orderBtn"

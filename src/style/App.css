@@ -1,22 +1,10 @@
+
 /* Main container styling */
 .maincontainer {
   text-align: center;
-  color: #524e4e; /* Darker color for a balanced look */
+  color: #4e433a; /* Soft dark brown color for text */
   font-size: 22px;
-  background: #ffffff; /* Soft light background */
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-/* Main container styling */
-.maincontainer {
-  text-align: center;
-  color: #4a3c30; /* Soft dark brown color for text */
-  font-size: 22px;
-  background: #f4f0e1; /* A soft beige background instead of pure white */
+  background: #2f2812; /* A soft beige background instead of pure white */
   min-height: 100vh;
   padding: 20px;
   display: flex;
@@ -38,6 +26,38 @@
   font-size: 1.2rem; /* Slightly larger text for better readability */
 }
 
+.light-mode .maincontainer {
+  color: #4e433a; /* Soft dark brown color for text */
+  background: #fdfdfd; /* Light beige for light mode background */
+}
+
+.dark-mode .maincontainer {
+  color: #e9e7e3; /* Light text for dark mode */
+  background: #2f2812; /* Soft dark brown for dark mode background */
+}
+
+.light-mode .maincontainer h1, .light-mode .maincontainer h2 {
+  color: #3e2a1f; /* Darker brown for headings in light mode */
+}
+
+.dark-mode .maincontainer h1, .dark-mode .maincontainer h2 {
+  color: #f8e3c6; /* Light gold for headings in dark mode */
+}
+
+/* Paragraphs and general text */
+.maincontainer p {
+  font-size: 1.2rem; /* Slightly larger text for better readability */
+}
+
+.light-mode .maincontainer p {
+  color: #6b6b6b; /* Subtle gray for paragraphs in light mode */
+}
+
+.dark-mode .maincontainer p {
+  color: #c5c1bd; /* Light gray for paragraphs in dark mode */
+}
+
+
 /* Home Page Styling with Overlay */
 .homePage {
   display: flex;
@@ -51,6 +71,13 @@
   background-position: center;
 }
 
+.light-mode .homePage {
+  background: rgba(255, 255, 255, 0.6); /* Soft light overlay for light mode */
+}
+
+.dark-mode .homePage {
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay for dark mode */
+}
 /* To ensure text stands out on background images */
 .homePage h1 {
   font-size: 3rem;
@@ -58,11 +85,28 @@
   color: #fff; /* Light color for headings to contrast with darker overlay */
 }
 
+
+.light-mode .homePage h1 {
+  color: #3e2a1f; /* Warm dark brown for headings in light mode */
+}
+
+.dark-mode .homePage h1 {
+  color: #fff; /* Bright white for headings in dark mode */
+}
+
+
 .homePage p {
   font-size: 1.5rem;
   color: #fff; /* Light color for text to stand out on darkened background */
 }
 
+.light-mode .homePage p {
+  color: #4e433a; /* Soft brown for text in light mode */
+}
+
+.dark-mode .homePage p {
+  color: #f9e8c6; /* Light gold for text in dark mode */
+}
 
 /* Navigation bar styling */
 nav ul {
@@ -72,6 +116,15 @@ nav ul {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.light-mode nav ul {
+  background-color: #fff; /* Light navbar for light mode */
+}
+
+.dark-mode nav ul {
+  background-color: #1c1c1c; /* Dark navbar for dark mode */
 }
 
 nav ul li {
@@ -80,9 +133,25 @@ nav ul li {
   font-weight: bold;
   transition: color 0.3s ease;
 }
+.light-mode nav ul li {
+  color: #7c5c3b; /* Soft golden brown for light mode */
+}
+
+.dark-mode nav ul li {
+  color: #e9e7e3; /* Light text for dark mode */
+}
+
 
 nav ul li:hover {
   color: #e39a5b; /* Lighter golden brown on hover */
+}
+
+.light-mode nav ul li:hover {
+  color: #e39a5b; /* Lighter golden brown on hover (light mode) */
+}
+
+.dark-mode nav ul li:hover {
+  color: #f8d99a; /* Warm gold on hover (dark mode) */
 }
 
 /* Headings styling */
@@ -115,6 +184,16 @@ button {
   margin-top: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.light-mode button {
+  background-color: #e39a5b; /* Light golden brown for buttons in light mode */
+  color: #fff;
+}
+
+.dark-mode button {
+  background-color: #7c5c3b; /* Deep brown for buttons in dark mode */
+  color: #e9e7e3;
 }
 
 button:hover {
@@ -169,24 +248,27 @@ button:hover {
   color: white;
 }
 
-.homePage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Overlay for text readability */
+.light-mode .content {
+  background: rgba(255, 255, 255, 0.8); /* Light overlay in light mode */
+  color: #4e433a;
 }
 
-.homePage h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-family: "Georgia", serif;
+.dark-mode .content {
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay in dark mode */
+  color: #e9e7e3;
 }
 
-.homePage p {
-  font-size: 1.5rem;
-  color: #f9e8c6; /* Soft light gold color for the paragraph text */
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .homePage {
+    padding: 20px;
+    text-align: center;
+  }
 }
 
 /* Menu & Other Views */
@@ -287,3 +369,120 @@ button:hover {
   background-color: #ffaa00; /* Slightly darker yellow on hover */
   transform: scale(1.05); /* Slightly larger on hover */
 }
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-mode .navbar {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .navbar ul li {
+  color: #333333;
+}
+
+.light-mode .homePage {
+  background-color: #f9f9f9;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle Slider Container */
+.themeToggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.themeToggleLabel {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Slider */
+.themeToggleSlider {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: var(--toggle-bg-color);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggleSlider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .themeToggleSlider {
+  background-color: #007bff;
+}
+
+.light-mode .themeToggleSlider::before {
+  transform: translateX(25px);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .homePage {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .themeToggleContainer {
+    gap: 0.25rem;
+  }
+}
+

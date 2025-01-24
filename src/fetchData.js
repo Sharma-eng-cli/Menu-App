@@ -8,3 +8,8 @@ export const fetchRecipes = async () => {
     return [];
   }
 };
+export const fetchRecipeDetails = async (recipeId) => {
+  const response = await fetch(`https://dummyjson.com/recipes/${recipeId}`); // Replace with the actual API endpoint
+  if (!response.ok) throw new Error("Failed to fetch recipe details");
+  return response.json();
+};
